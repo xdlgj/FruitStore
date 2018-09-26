@@ -1,0 +1,214 @@
+body,h1,h2,h3,h4,h5,h6,p{
+	margin: 0;
+}
+
+
+#container{
+	width: 990px;
+	margin: 20px auto;
+	overflow: hidden;
+
+}
+#container h2.title{
+	color: #adadad;
+	border-bottom: 1px solid #adadad;
+	padding-bottom: 20px;
+	font-weight: normal;
+	margin-bottom: 40px;
+
+}
+
+#container>p{
+	float: left;
+	/*相对定位*/
+	position: relative;
+}
+
+#container>p>a{
+	/*绝对定位，宽度，边框，倒角，文本：水平居中对齐，行高，取消下划线，颜色大小*/
+	position: absolute;
+	left: 185px;
+	bottom: 30px;
+	width:130px;
+	height:40px;
+	border: 1px solid #64a131;
+	box-sizing: border-box;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	text-decoration:none;
+	color: #64a131;
+	font-size: 18px;
+
+}
+
+#login{
+	float: right;
+	margin-top: 75px;
+
+
+}
+#login .form-line{
+	overflow: hidden;
+	color: #999;
+}
+
+#login .form-line>p{
+	float: left;
+	/*清除p元素的外边距*/
+	margin: 0;
+	color: #999;
+	width: 64px;
+	height: 40px;
+	text-align: right;
+	margin-right: 42px;
+	line-height: 40px;
+
+}
+
+#login .form-line>div{
+	float: left;
+	/*margin-bottom: 25px;*/
+	height: 75px;
+	width: 300px;
+}
+#login .form-contral{
+	box-sizing: border-box;
+	width: 300px;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding-left:10px;
+	outline: none;  
+}
+#login .form-contral:focus{
+	border-color: #64a131;
+	box-shadow: 0 0 2px #64a311;
+}
+
+#login .form-line>div>p{
+	float: right;
+
+}
+#login .form-line>div>p a{
+	color: #999;
+}
+#login .form-line .isSaved{
+	vertical-align: middle;
+}
+#login .form-line a.register{
+	float: right;
+	width: 145px;
+	height: 40px;
+	border: 1px solid #64a131;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	color: #64a131;
+	font-size: 18px;
+	text-decoration: none;
+	box-sizing: border-box;
+
+}
+#login .form-line .btnLogin{
+	width: 145px;
+	height: 40px;
+	border: none;
+	outline: none;
+	background-color: #64a131;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 18px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+#login .form-line>div .info{
+	color: red;
+	margin-top: 5px;
+}
+
+/*注册页面的特有的样式*********************************************************************/
+#register{
+	float: right;
+	margin-top: 5px;
+
+
+}
+#register .form-line{
+	overflow: hidden;
+	color: #999;
+}
+
+#register .form-line>p{
+	float: left;
+	/*清除p元素的外边距*/
+	margin: 0;
+	color: #999;
+	width: 64px;
+	height: 40px;
+	text-align: right;
+	margin-right: 42px;
+	line-height: 40px;
+
+}
+
+#register .form-line>div{
+	float: left;
+	/*margin-bottom: 25px;*/
+	height: 75px;
+	width: 300px;
+}
+#register .form-contral{
+	box-sizing: border-box;
+	width: 300px;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding-left:10px;
+	outline: none;  
+}
+#register .form-contral:focus{
+	border-color: #64a131;
+	box-shadow: 0 0 2px #64a311;
+}
+
+#register .form-line>div>p{
+	float: right;
+
+}
+#register .form-line>div>p a{
+	color: #999;
+}
+#register .form-line .isSaved{
+	vertical-align: middle;
+}
+#register .form-line a.register{
+	float: right;
+	width: 145px;
+	height: 40px;
+	border: 1px solid #64a131;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 40px;
+	color: #64a131;
+	font-size: 18px;
+	text-decoration: none;
+	box-sizing: border-box;
+
+}
+#register .form-line .btnLogin{
+	width: 145px;
+	height: 40px;
+	border: none;
+	outline: none;
+	background-color: #64a131;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 18px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+#register .form-line>div .info{
+	color: red;
+	margin-top: 5px;
+}

@@ -1,0 +1,76 @@
+{%extends 'login.html'%}
+
+{%block title%}
+	会员注册
+{%endblock%}
+
+
+{%block body_title%}
+	会员注册
+{%endblock%}
+
+{%block link_btn%}
+	<a href="{%url 'login'%}">会员登录&gt;</a>
+{%endblock%}
+{% block style %}
+    <script src="/static/js/register.js"></script>
+{% endblock %}
+{%block form%}
+
+	<div id="register">
+		<form id="frmRegister" action="/register/" method="post">
+            {% csrf_token %}
+			<!-- 第一行：手机号-->
+			<div class="form-line">
+				<p>手机号</p>
+				<div>
+					<input id="phone_num" class="form-contral" type="text" name="uphone" >
+                    <p id="uphone-show" class="info"></p>
+				</div>
+			</div>
+			<!-- 第二行：密码-->
+			<div class="form-line">
+				<p>密码</p>
+				<div>
+					<input id="reg_pwd" class="form-contral" type="password" name="upwd" placeholder="请输入6位以上号码字符">
+				    <p id="upwd-show" class="info"></p>
+                </div>
+			</div>
+			<!-- 第三行：确认密码-->
+			<div class="form-line">
+				<p>确认密码</p>
+				<div>
+					<input class="form-contral" type="password" name="reupwd" placeholder="请输与密码相同的字符">
+                    <p id="upwd-again-show" class="info"></p>
+				</div>
+			</div>
+			<!-- 第四行：邮箱-->
+			<div class="form-line">
+				<p>邮箱</p>
+				<div>
+					<input class="form-contral" type="text" name="uemail" placeholder="请输入可用的邮箱">
+                    <p id="uemail-show" class="info"></p>
+				</div>
+			</div>
+            <!-- 第五行：邮箱-->
+			<div class="form-line">
+				<p>用户名</p>
+				<div>
+					<input class="form-contral" type="text" name="uname" placeholder="请输入用户名">
+                    <p id="uname-show" class="info"></p>
+				</div>
+			</div>
+			<!-- 第六行：注册 会员登录-->
+			<div class="form-line">
+				<p></p>
+				<div>
+					<a class="register" href="{%url 'login'%}">会员登录</a>
+					<input class='btnLogin' type="submit" name="login" value="注册">
+				</div>
+				
+				
+			</div>	
+		</form>
+	</div>
+
+{%endblock%}

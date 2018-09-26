@@ -1,0 +1,573 @@
+
+{% load static %}
+
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>水果商城</title>
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}"/>
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/unslider.min.js' %}"></script>
+    {% block JS %}
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+    {% endblock %}
+ </head>
+ <body>
+  <div class="container">
+		<!-- 1、网页头部 -->
+		<div id="top">
+			<!-- 1.1 右：列表 -->
+			<ul id="list">
+                {% if uname %}
+                    <li style="color:purple">
+                        欢迎,{{ uname }}
+                    </li>
+                    <li>
+                        <b></b>
+                        <a href="/logout/">注销</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="/login/">[登录]</a>
+                        ,
+                        <a href="/register/">[注册有惊喜]</a>
+                    </li>
+                {% endif %}
+				<li>
+					<b></b>
+					果园公告
+				</li>
+				<li>
+					<b></b>
+					<a href="#">券卡兑换</a>
+				</li>
+				<li>
+					<b></b>
+					手机果园
+				</li>
+			</ul>
+			<!-- 1.2 左：三个超链接 -->
+			<!-- 1.2.1 上海 -->
+			<a href="#" class="address">
+				上海 
+				<u></u>
+			</a>
+			<!-- 1.2.2 满百包邮 -->
+			<a>满百包邮(环郊内)</a>
+			<!-- 1.2.3 星夜达 -->
+			<a href="#" class="xing">星夜达</a>
+		</div>
+		<!-- 2、LOGO 和 热门搜索 -->
+        <div id="myCart">
+            <a href="/cart/" >
+
+
+            </a>
+        </div>
+		<!-- 3、BANNER广告(横幅广告), 实现轮播效果-->
+        <div id="banner" >
+            <ul>
+                <li>
+                    <img src="{% static 'images/banner1.jpg' %}" alt="" width="990" height="206.65">
+                </li>
+                <li>
+                    <img src="{% static 'images/banner2.jpg' %}" alt="" width="990" height="206.65">
+                </li>
+                <li>
+                    <img src="{% static 'images/banner1.jpg' %}" alt="" width="990" height="206.65">
+                </li>
+                <li>
+                    <img src="{% static 'images/banner2.jpg' %}" alt="" width="990" height="206.65">
+                </li>
+                <li>
+                    <img src="{% static 'images/banner1.jpg' %}" alt="" width="990" height="206.65">
+                </li>
+            </ul>
+            <a href="javascript:void(0);" class="unslider-arrow04 prev">
+                <img class="arrow" id="al" src="{% static 'images/arrowl.png' %} " alt="prev" width="20" height="35">
+            </a>
+            <a href="javascript:void(0);" class="unslider-arrow04 next">
+                <img class="arrow" id="ar" src="{%static 'images/arrowr.png'%}" alt="next" width="20" height="37">
+            </a>
+	    </div>
+		<!-- 4、四幅小广告 -->
+		<ul id="adv-img">
+			<li>
+				<a href="#">
+					<img src="{% static 'images/2ba20598135dbba5e97d241ebfa167d9.jpg' %}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'images/25af37592bf484fbeaef1cc4ff1e09c7.jpg' %}">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="{% static 'images/904419aa2e364412b3c07c3cbda24ef9.jpg' %}">
+				</a>
+			</li>
+			<li class="no-margin">
+				<a href="#">
+					<img src="{% static 'images/d72b849b461c08d991c265df00a1bfde.jpg' %}">
+				</a>
+			</li>
+		</ul>
+		<!-- 5、网页主体内容(各种产品) -->
+        {% block main %}
+		<div id="main">
+            {% comment %}
+			<!-- 5.1 礼品卡券 -->
+			<div class="item">
+				<!-- 5.1.1 上方 ：标题 + 更多 -->
+				<p class="title">
+					<a href="#">更多</a>
+					<img src="{% static 'images/t4.png' %}">
+				</p>
+				<!-- 5.1.2 下方 ：内容 -->
+				<ul>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-419-TPSKW6SP.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-430-9RBRWTU9.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-435-6RCCRDWH.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li class="no-margin">
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-695-F2BSB4DC.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-701-CB41CHUW.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-2109-AB17T5A1.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-2114-226C8S26.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3356-5D1F2KDU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li class="no-margin">
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 5.2 家庭量贩 -->
+			<div class="item">
+				<!-- 5.1.1 上方 ：标题 + 更多 -->
+				<p class="title">
+					<a href="#">更多</a>
+					<img src="{% static 'images/t4.png' %}">
+				</p>
+				<!-- 5.1.2 下方 ：内容 -->
+				<ul>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-4612-95F796WB.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li class="no-margin">
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li>
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+					<li class="no-margin">
+						<!-- 上 ：图像 -->
+						<p>
+							<img src="{% static 'images/1-270x270-3877-BXDY6KCU.jpg' %}">
+						</p>
+						<!-- 下 ：文本 -->
+						<div class="content">
+							<!-- 右：购物车图标 -->
+							<a href="#" class="cart">
+								<img src="{% static 'images/cart.png' %}">
+							</a>
+							<!-- 左上：商品名称 -->
+							<p>
+								欢乐时光水果礼篮
+							</p>
+							<!-- 左下：价格 + 规格 -->
+							<span>
+								&yen;188.00/1份
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 5.3 全球鲜果 -->
+			<!-- 5.4 生鲜美食 -->
+			{% endcomment %}
+		</div>
+        {% endblock %}
+		<!-- 5、网页主体内容结束-->
+		<!-- 6、网页底部 -->
+	</div>
+ </body>
+</html>
